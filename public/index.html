@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="/assets/js/tracker.js"></script>
+		<script type="text/javascript">
+		function trackEvent() {
+			var tracker = new Tracker();
+			var event = tracker.createEvent({
+				id:1234,
+				name: "Test Object"
+			},{
+				id:12346,
+				name: "CLICKED"
+			},{
+				id:1234,
+				name: "Test Actor"
+			},{
+				id:1234,
+				name: "Test Action"
+			})
+			event.logEvent(function (response) {
+				console.log(response)
+			})
+		}
+		</script>
+	</head>
+	<body>
+		<a href="#" onclick="trackEvent()">Capture Event</a>
+	</body>
+</html>
